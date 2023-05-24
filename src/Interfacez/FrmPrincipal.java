@@ -3,8 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package colegio;
+package Interfacez;
 
+import Calificaciones.Nota1;
+import Interfacez.FrmMatriculas;
+import Interfacez.FrmListarDocentes;
+import Interfacez.FrmListarCursos;
+import Interfacez.FrmListarAlumnos;
+import Interfacez.FrmConsultarAlumno;
+import Interfacez.FrmAgregarDocente;
+import Interfacez.FrmAgregarCurso;
+import Interfacez.FrmAgregarAlumno;
 import javax.swing.JOptionPane;
 
 /**
@@ -30,9 +39,12 @@ public class FrmPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMAlumnos = new javax.swing.JMenu();
         jMAAgregar = new javax.swing.JMenuItem();
@@ -51,13 +63,17 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         jMSalir = new javax.swing.JMenuItem();
 
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/colegio/Imagenes/video-fondo-azul-_online-video-cutter.com_.gif"))); // NOI18N
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("APLICACIÓN COLEGIO ADSI 1438222");
-        setBackground(new java.awt.Color(204, 255, 204));
+        setBackground(new java.awt.Color(153, 153, 255));
         setUndecorated(true);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/colegio/Imagenes/logo-college-removebg-preview.png"))); // NOI18N
         jLabel1.setText("jLabel1");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 41, 346, 307));
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 204));
 
@@ -72,7 +88,16 @@ public class FrmPrincipal extends javax.swing.JFrame {
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/colegio/Imagenes/Imagen inicio.jpeg"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(353, 7, -1, 372));
+
+        jLabel4.setBackground(new java.awt.Color(102, 255, 102));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 860, 350));
+
+        jLabel5.setBackground(new java.awt.Color(204, 204, 255));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, 380));
 
         jMenuBar1.setBackground(new java.awt.Color(255, 255, 255));
         jMenuBar1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -82,7 +107,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jMAlumnos.setText("Alumnos");
         jMAlumnos.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
-        jMAAgregar.setText("Agregar");
+        jMAAgregar.setText("Agregar alumno");
         jMAAgregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMAAgregarActionPerformed(evt);
@@ -90,7 +115,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
         });
         jMAlumnos.add(jMAAgregar);
 
-        jMAConsultar.setText("Consultar");
+        jMAConsultar.setText("Consultar alumno");
         jMAConsultar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMAConsultarActionPerformed(evt);
@@ -98,7 +123,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
         });
         jMAlumnos.add(jMAConsultar);
 
-        jMAListar.setText("Listar");
+        jMAListar.setText("Listado de alumnos");
         jMAListar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMAListarActionPerformed(evt);
@@ -112,7 +137,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jMDocentes.setText("Docentes");
         jMDocentes.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
-        jMenuItem1.setText("Agregar");
+        jMenuItem1.setText("Agregar docente");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem1ActionPerformed(evt);
@@ -120,7 +145,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
         });
         jMDocentes.add(jMenuItem1);
 
-        jMDListar.setText("Listar");
+        jMDListar.setText("Listado de docente");
         jMDListar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMDListarActionPerformed(evt);
@@ -131,10 +156,10 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jMenuBar1.add(jMDocentes);
 
         jMCursos.setBackground(new java.awt.Color(255, 255, 255));
-        jMCursos.setText("Cursos");
+        jMCursos.setText("Asignaturas");
         jMCursos.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
-        jMCAgregar.setText("Agregar");
+        jMCAgregar.setText(" Agregar asignatura");
         jMCAgregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMCAgregarActionPerformed(evt);
@@ -142,7 +167,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
         });
         jMCursos.add(jMCAgregar);
 
-        jMCListar.setText("Listar");
+        jMCListar.setText("Listado de asignaturas");
         jMCListar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMCListarActionPerformed(evt);
@@ -195,32 +220,6 @@ public class FrmPrincipal extends javax.swing.JFrame {
         jMenuBar1.add(jMenu1);
 
         setJMenuBar(jMenuBar1);
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 346, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 0, 0))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 307, Short.MAX_VALUE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addContainerGap())
-        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -283,12 +282,10 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
     private void jMMAgregar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMMAgregar1ActionPerformed
         // TODO add your handling code here:
+         new Nota1().setVisible(true);
     }//GEN-LAST:event_jMMAgregar1ActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
+     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -302,13 +299,13 @@ public class FrmPrincipal extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FrmPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmAgregarAlumno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FrmPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmAgregarAlumno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FrmPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmAgregarAlumno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FrmPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmAgregarAlumno.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
@@ -319,10 +316,12 @@ public class FrmPrincipal extends javax.swing.JFrame {
             }
         });
     }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JMenuItem jMAAgregar;
     private javax.swing.JMenuItem jMAConsultar;
     private javax.swing.JMenuItem jMAListar;

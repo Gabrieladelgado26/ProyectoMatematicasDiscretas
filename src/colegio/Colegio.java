@@ -5,6 +5,8 @@
  */
 package colegio;
 
+import Interfacez.FrmPrincipal;
+
 /**
  *
  * @author 
